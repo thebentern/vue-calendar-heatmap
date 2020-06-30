@@ -59,7 +59,7 @@ export default class CalendarHeatmap {
     } else if (value <= 0) {
       return 1
     } else if (value >= this.max) {
-      return 5
+      return 4
     } else {
       if (value > 0 && value <= 5) {
         return 1
