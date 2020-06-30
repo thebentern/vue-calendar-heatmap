@@ -14,8 +14,8 @@
         ) {{ lo.days[1] }}
         text.vch__day__label(
           v-if="dayLabels == 'weekdays'"
-          :x="vertical ? SQUARE_SIZE * 1 : 0",
-          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 20"
+          :x="vertical ? SQUARE_SIZE * 2 : 0",
+          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 32"
         ) {{ lo.days[2] }}
         text.vch__day__label(
           :x="vertical ? SQUARE_SIZE * 3 : 0",
@@ -23,8 +23,8 @@
         ) {{ lo.days[3] }}
         text.vch__day__label(
           v-if="dayLabels == 'weekdays'"
-          :x="vertical ? SQUARE_SIZE * 1 : 0",
-          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 20"
+          :x="vertical ? SQUARE_SIZE * 4 : 0",
+          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 57"
         ) {{ lo.days[4] }}
         text.vch__day__label(
           :x="vertical ? SQUARE_SIZE * 5 : 0",
