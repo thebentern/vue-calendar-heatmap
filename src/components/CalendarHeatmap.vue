@@ -13,9 +13,19 @@
           :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 20"
         ) {{ lo.days[1] }}
         text.vch__day__label(
+          v-if="dayLabels == 'weekdays'"
+          :x="vertical ? SQUARE_SIZE * 1 : 0",
+          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 20"
+        ) {{ lo.days[2] }}
+        text.vch__day__label(
           :x="vertical ? SQUARE_SIZE * 3 : 0",
           :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 44"
         ) {{ lo.days[3] }}
+        text.vch__day__label(
+          v-if="dayLabels == 'weekdays'"
+          :x="vertical ? SQUARE_SIZE * 1 : 0",
+          :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 20"
+        ) {{ lo.days[4] }}
         text.vch__day__label(
           :x="vertical ? SQUARE_SIZE * 5 : 0",
           :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 69"
@@ -109,6 +119,10 @@ export default {
     legendStyle:{
       type: String,
       default: 'simple'
+    },
+    dayLabels:{
+      type: String,
+      default: 'mwf'
     }
   },
 
