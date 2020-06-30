@@ -20,8 +20,8 @@
           :x="vertical ? SQUARE_SIZE * 5 : 0",
           :y="vertical ? SQUARE_SIZE - SQUARE_BORDER_SIZE : 69"
         ) {{ lo.days[5] }}
-
-      g.vch__legend__wrapper(:transform="legendWrapperTransform[position]")
+        
+      g.vch__legend__wrapper(:transform="legendWrapperTransform[position]", v-if="legendStyle == 'simple'")
         text(
           :x="vertical ? SQUARE_SIZE * 1.25 : -25"
           :y="vertical ? 8 : SQUARE_SIZE + 1"
@@ -39,6 +39,8 @@
           :x="vertical ? SQUARE_SIZE * 1.25 : SQUARE_SIZE * rangeColor.length + 1",
           :y="vertical ? SQUARE_SIZE * (rangeColor.length + 2) - SQUARE_BORDER_SIZE : SQUARE_SIZE + 1"
           ) {{ lo.more }}
+
+
       g.vch__year__wrapper(:transform="yearWrapperTransform")
         g.vch__month__wrapper(
           v-for="(week, weekIndex) in heatmap.calendar",
@@ -103,6 +105,10 @@ export default {
     noDataText: {
       type: String,
       default: null
+    },
+    legendStyle:{
+      type: String,
+      default: 'simple'
     }
   },
 
